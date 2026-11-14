@@ -25,7 +25,7 @@ with st.sidebar:
 
 # ---------- 核心决策计算层 ----------
 def utility(x, alpha):
-    return x ** alpha if x >= 0 else 0.0
+    return np.where(x >= 0, x ** alpha, 0.0)
 
 emv_a = a_prob * a_high + (1 - a_prob) * a_low
 emv_b = b_prob * b_high + (1 - b_prob) * b_low
